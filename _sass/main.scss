@@ -37,6 +37,13 @@ body::before {
   z-index: 9999;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -100px;
+}
+
 /* ── MASTHEAD ── */
 .masthead {
   border-bottom: 3px double var(--border);
