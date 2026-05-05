@@ -4,14 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-[jekyll-organization]: https://github.com/jekyll
+We’re a team in NorCal making board game content! We’ve been playing board games
+ever since we met in Elementary School, and in 2019, we set out on a journey to
+make fun sketches, but also detailed and as unbiased as possible reviews with a
+scoring system. If we can help grow the hobby in the process, that’s a huge win.
+We have an interview with the online magazine, BoldJourney, for more info!
+Members of the extended Shelfside universe are featured below!
