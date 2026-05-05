@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: Reviews
+  link: /reviews.html
+- name: Resources
+  link: /resources.html
+- name: Consulting
+  link: /consulting/
+- name: About
+  link: /about/

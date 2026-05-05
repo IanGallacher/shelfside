@@ -1,0 +1,530 @@
+/* ===== TABLEPLEX CODEX STYLES ===== */
+:root {
+  --ink: #1a1208;
+  --parchment: #f5efe0;
+  --cream: #faf6ec;
+  --amber: #c8890a;
+  --amber-dark: #8c5f00;
+  --red: #b52b1a;
+  --muted: #7a6a50;
+  --border: #c8b89a;
+  --shadow: rgba(26, 18, 8, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  border-bottom: 3px double var(--border);
+  background: var(--parchment);
+  position: relative;
+}
+
+.masthead-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0;
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.issue-tag {
+  background: var(--ink);
+  color: var(--parchment);
+  padding: 0.15rem 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.site-title {
+  text-align: center;
+  padding: 2.5rem 0 1.2rem;
+}
+
+.site-title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.site-title h1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.tagline {
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.ornament {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--amber);
+  letter-spacing: 0.5rem;
+  padding: 0.5rem 0;
+  opacity: 0.8;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--ink);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0 2rem;
+}
+nav a {
+  color: var(--parchment);
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.4rem;
+  display: block;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s;
+}
+nav a:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+nav a:hover {
+  background: var(--amber);
+  color: var(--ink);
+}
+nav a.active {
+  background: var(--amber-dark);
+  color: var(--parchment);
+}
+
+/* ── SECTIONS ── */
+.hero-section,
+.reviews-grid,
+.main-layout {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.section-rule span {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.section-rule::before,
+.section-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Hero card */
+.hero-card {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  border: 1px solid var(--border);
+  background: var(--parchment);
+  box-shadow: 6px 6px 0 var(--border);
+  animation: fadeUp 0.6s ease both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-art {
+  background: #0f0d08;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-body {
+  padding: 2rem 2.5rem;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.review-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.badge {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid;
+}
+.badge-featured {
+  border-color: var(--amber);
+  color: var(--amber-dark);
+  background: rgba(200, 137, 10, 0.08);
+}
+.badge-strategy {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.badge-coop {
+  border-color: var(--red);
+  color: var(--red);
+}
+.badge-party {
+  border-color: var(--muted);
+  color: var(--muted);
+}
+.badge-euro {
+  border-color: #5a7a4a;
+  color: #3a5a2a;
+}
+.review-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+.review-subtitle {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1.2rem;
+  color: var(--amber);
+}
+.star.empty {
+  color: var(--border);
+}
+.review-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.game-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+.stat-val {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+  margin-top: 1rem;
+}
+.read-more {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  background: var(--ink);
+  color: var(--parchment);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+  transition: 0.2s;
+}
+.read-more:hover {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Grid cards */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.review-card {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  box-shadow: 4px 4px 0 var(--border);
+  transition: 0.2s;
+}
+.review-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--border);
+}
+.card-art {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.6rem 0 0.3rem;
+}
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.card-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+}
+.score-pill {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: var(--amber-dark);
+  background: rgba(200, 137, 10, 0.12);
+  border: 1px solid var(--amber);
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* Sidebar */
+.main-layout {
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+}
+.homepage-more-reviews {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+}
+.sidebar-widget {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0 var(--border);
+  margin-bottom: 2rem;
+}
+.widget-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-style: italic;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.top-list {
+  list-style: none;
+}
+.top-list li {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.rank-num {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--amber);
+  min-width: 28px;
+}
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cat-tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--ink);
+}
+.cat-tag:hover {
+  background: var(--ink);
+  color: var(--parchment);
+}
+
+/* Secondary reviews list */
+.secondary-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.list-review {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.2rem;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  box-shadow: 3px 3px 0 var(--border);
+}
+.list-art {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  background: var(--ink);
+  color: var(--parchment);
+  margin-top: 4rem;
+  border-top: 4px solid var(--amber);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.footer-brand h2 em {
+  color: var(--amber);
+  font-style: italic;
+}
+.footer-col h3 {
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--amber);
+  margin-bottom: 1rem;
+}
+.footer-col a {
+  color: rgba(245, 239, 224, 0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+.footer-col a:hover {
+  color: var(--amber);
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  color: rgba(245, 239, 224, 0.4);
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    overflow-x: auto;
+  }
+  .nav-inner {
+    justify-content: flex-start;
+    min-width: max-content;
+  }
+}

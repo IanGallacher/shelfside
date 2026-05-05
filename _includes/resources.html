@@ -1,0 +1,34 @@
+<!-- RECENT REVIEWS GRID -->
+<section class="reviews-grid">
+  <div class="section-rule">
+    <span>Recent Reviews</span>
+  </div>
+  <div class="grid-3">
+    {% for review in site.resources %}
+      <article class="review-card">
+        <div class="card-art">
+          <svg viewBox="0 0 300 180" width="100%" height="100%">
+            <rect width="300" height="180" fill="#1a1a2e" />
+            <text x="150" y="100" text-anchor="middle" fill="#c8890a">
+              {{ review.game_name }}
+            </text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="review-meta">
+            <span class="badge badge-{{ review.category | downcase }}">{{ review.category }}</span>
+          </div>
+          <h3 class="card-title">{{ review.game_name }}</h3>
+          <p class="card-desc">
+            {{ review.excerpt | strip_html | truncatewords: 20 }}
+          </p>
+          <a href="{{ review.url }}" class="read-more">Read Review</a>
+          <div class="card-footer">
+            <span>By {{ review.reviewer }}</span>
+            <span class="score-pill">{{ review.score }}</span>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

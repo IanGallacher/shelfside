@@ -1,0 +1,15 @@
+---
+layout: page
+title: Resources
+---
+
+<h1>Resources</h1>
+
+<ul>
+  {% for resource in site.resources %}
+  <li>
+    <h2><a href="{{ resource.url }}">{{ resource.name }}</a></h2>
+    {{ resource.excerpt }}
+  </li>
+  {% endfor %}
+</ul>
