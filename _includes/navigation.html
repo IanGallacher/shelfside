@@ -2,7 +2,7 @@
   <div class="nav-inner">
     {% for item in site.data.navigation %}
       <a
-        href="{{ item.link }}"
+        href="{{ site.baseurl }}/{{ item.link }}"
         {% if page.url == item.link %}
           class="current"
         {% endif %}
