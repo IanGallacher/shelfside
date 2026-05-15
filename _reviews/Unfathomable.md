@@ -6,6 +6,7 @@ date: "20211124"
 reviewer: "Ashton"
 shelfside_certified: "N"
 video_link: "Vid Link"
+score: 6
 scores:
   shelfside: 9
   daniel: 5

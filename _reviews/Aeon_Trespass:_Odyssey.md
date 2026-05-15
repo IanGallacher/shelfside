@@ -6,6 +6,7 @@ date: "20231027"
 reviewer: "Daniel"
 shelfside_certified: "Y"
 video_link: "Vid Link"
+score: 7
 scores:
   shelfside: 5
   daniel: 7

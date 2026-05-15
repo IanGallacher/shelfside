@@ -8,6 +8,8 @@ headers = csv.readline.map(&:strip)
 counts = Hash.new { |hash, key| hash[key] = Hash.new(0) }
 
 def generate_file(csv_row)
+  score = csv_row["#{csv_row["Reviewed By"]}'s score"]
+
   <<~FILE
     ---
     title: "#{csv_row["name"]}"
@@ -17,6 +19,7 @@ def generate_file(csv_row)
     reviewer: "#{csv_row["Reviewed By"]}"
     shelfside_certified: "#{csv_row["Shelfside Certified"]}"
     video_link: "#{"Vid Link"}"
+    score: #{score != "N/A" ? score : ""}
     scores:
       shelfside: #{csv_row["Shelfside's Score"]}
       daniel: #{csv_row["Daniel's score"]}
