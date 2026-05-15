@@ -23,7 +23,7 @@
           <p class="card-desc">
             {{ review.excerpt | strip_html | truncatewords: 20 }}
           </p>
-          <a href="{{ review.url }}" class="read-more">Read Review</a>
+          <a href="{{ site.baseurl }}/{{ review.url }}" class="read-more">Read Review</a>
           <div class="card-footer">
             <span>By {{ review.reviewer }}</span>
             <span class="score-pill">{{ review.score }}</span>

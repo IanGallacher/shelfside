@@ -8,7 +8,7 @@ title: Resources
   {% for resource in site.resources %}
     <li>
       <h2>
-        <a href="{{ resource.url }}">{{ resource.name }}</a>
+        <a href="{{ site.baseurl }}/{{ resource.url }}">{{ resource.name }}</a>
       </h2>
       {{ resource.excerpt }}
     </li>
